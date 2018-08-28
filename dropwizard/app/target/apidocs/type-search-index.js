@@ -1,0 +1,1 @@
+typeSearchIndex = [{"p":"com.sigsci.dwiz","l":"DwizExampleApplication"},{"p":"com.sigsci.dwiz","l":"DwizExampleConfiguration"},{"p":"com.sigsci.dwiz","l":"HelloWorldResource"},{"p":"com.sigsci.dwiz","l":"Saying"}]

@@ -12,7 +12,7 @@ build-no-cache:
 	docker build --no-cache -t $(DOCKERUSER)/$(DOCKERNAME):$(DOCKERTAG) .
 
 run:
-	docker run -i -v $(AGENT_CONF):/etc/sigsci/agent.conf --name $(DOCKERNAME) --hostname $(SIGSCI_HOSTNAME) -p $(EXPOSE_PORT):8080 -d $(DOCKERUSER)/$(DOCKERNAME)
+	docker run --rm -i -v $(AGENT_CONF):/etc/sigsci/agent.conf --name $(DOCKERNAME) --hostname $(SIGSCI_HOSTNAME) -p $(EXPOSE_PORT):8080 -d $(DOCKERUSER)/$(DOCKERNAME)
 
 deploy:
 	docker push $(DOCKERUSER)/$(DOCKERNAME):$(DOCKERTAG)

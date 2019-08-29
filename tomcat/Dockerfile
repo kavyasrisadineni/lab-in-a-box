@@ -1,4 +1,4 @@
-FROM tomcat:8.0
+FROM tomcat:9.0
 
 
 # initial setup
@@ -9,7 +9,7 @@ RUN echo "deb https://apt.signalsciences.net/release/debian/ jessie main" > /etc
 RUN apt-get update
 
 # install
-RUN apt-get -y install apache2 php5
+RUN apt-get -y install apache2 php
 RUN apt-get -y install sigsci-agent
 
 

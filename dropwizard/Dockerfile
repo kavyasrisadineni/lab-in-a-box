@@ -14,7 +14,7 @@ RUN cd /usr/sbin && curl -O https://dl.signalsciences.net/sigsci-agent/sigsci-ag
 
 RUN mkdir /example && mkdir /example/classes
 COPY app/* /example/
-COPY app/repo/com/signalsciences/sigsci-module-java/1.0.2/* /example/classes/
+COPY app/src /example/src
 
 COPY start.sh /app/start.sh
 RUN chmod +x /app/start.sh

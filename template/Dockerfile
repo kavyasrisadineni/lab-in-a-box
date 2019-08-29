@@ -2,6 +2,7 @@
 FROM debian:8.0
 
 # initial setup and repos (if needed)
+RUN sed -i '/jessie-updates/d' /etc/apt/sources.list  # Now archived
 RUN apt-get update
 RUN apt-get install -y apt-transport-https wget sed
 RUN wget -qO - https://apt.signalsciences.net/gpg.key | apt-key add -

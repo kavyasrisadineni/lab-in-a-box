@@ -26,7 +26,7 @@ destroy:		## Same as clean except deletes the image, as well:
 			##
 
 
-#Ansible
+# Ansible
 
 ansible-build:
 	$(MAKE) -C ./ansible/ build
@@ -50,7 +50,7 @@ ansible-destroy:
 	$(MAKE) -C ./ansible/ destroy
 
 
-#Apache
+# Apache
 apache-build:	
 	$(MAKE) -C ./apache/ build
 
@@ -69,7 +69,28 @@ apache-clean:
 apache-destroy:
 	$(MAKE) -C ./apache/ destroy
 
+# Apache-mutillidae
+
+apache-mutillidae-build:	
+	$(MAKE) -C ./apache-mutillidae/ build
+
+apache-mutillidae-build-no-cache:
+	$(MAKE) -C ./apache-mutillidae/ build-no-cache
+
+apache-mutillidae-run:		## Apache based on Debian (must run `make apache-build` first.)
+	$(MAKE) -C ./apache-mutillidae/ run	
+
+apache-mutillidae-deploy:
+	$(MAKE) -C ./apache-mutillidae/ deploy
+
+apache-mutillidae-clean:
+	$(MAKE) -C ./apache-mutillidae/ clean
+
+apache-mutillidae-destroy:
+	$(MAKE) -C ./apache-mutillidae/ destroy
+
 #Apache-RedHat
+
 apache-redhat-build:	
 	$(MAKE) -C ./apache-redhat/ build
 
@@ -88,7 +109,7 @@ apache-redhat-clean:
 apache-redhat-destroy:
 	$(MAKE) -C ./apache-redhat/ destroy
 
-#nginx
+# nginx
 
 nginx-build:
 	$(MAKE) -C ./nginx/ build
@@ -107,6 +128,26 @@ nginx-clean:
 
 nginx-destroy:
 	$(MAKE) -C ./nginx/ destroy
+
+#openresty
+
+openresty-build:
+	$(MAKE) -C ./openresty/ build
+
+openresty-build-no-cache:
+	$(MAKE) -C ./openresty/ build-no-cache
+
+openresty-run:		## openresty based on debian 9 (must run `make openresty-build` first.)
+	$(MAKE) -C ./openresty/ run	
+
+openresty-deploy:
+	$(MAKE) -C ./openresty/ deploy
+
+openresty-clean:
+	$(MAKE) -C ./openresty/ clean
+
+openresty-destroy:
+	$(MAKE) -C ./openresty/ destroy
 
 #nginx-alpine
 
@@ -128,7 +169,67 @@ nginx-alpine-clean:
 nginx-alpine-destroy:
 	$(MAKE) -C ./nginx-alpine/ destroy
 
-#Python
+# nginx-amazon
+
+nginx-amazon-build:
+	$(MAKE) -C ./nginx-amazon/ build
+
+nginx-amazon-build-no-cache:
+	$(MAKE) -C ./nginx-amazon/ build-no-cache
+
+nginx-amazon-run:		## Nginx based on debian (must run `make nginx-build` first.)
+	$(MAKE) -C ./nginx-amazon/ run	
+
+nginx-amazon-deploy:
+	$(MAKE) -C ./nginx-amazon/ deploy
+
+nginx-amazon-clean:
+	$(MAKE) -C ./nginx-amazon/ clean
+
+nginx-amazon-destroy:
+	$(MAKE) -C ./nginx-amazon/ destroy
+
+# nginx-amazon1
+
+nginx-amazon1-build:
+	$(MAKE) -C ./nginx-amazon1/ build
+
+nginx-amazon1-build-no-cache:
+	$(MAKE) -C ./nginx-amazon1/ build-no-cache
+
+nginx-amazon1-run:		## Nginx based on debian (must run `make nginx-build` first.)
+	$(MAKE) -C ./nginx-amazon1/ run	
+
+nginx-amazon1-deploy:
+	$(MAKE) -C ./nginx-amazon1/ deploy
+
+nginx-amazon1-clean:
+	$(MAKE) -C ./nginx-amazon1/ clean
+
+nginx-amazon1-destroy:
+	$(MAKE) -C ./nginx-amazon1/ destroy
+
+# nginx-amazon2
+
+nginx-amazon2-build:
+	$(MAKE) -C ./nginx-amazon2/ build
+
+nginx-amazon2-build-no-cache:
+	$(MAKE) -C ./nginx-amazon2/ build-no-cache
+
+nginx-amazon2-run:		## Nginx based on debian (must run `make nginx-build` first.)
+	$(MAKE) -C ./nginx-amazon2/ run	
+
+nginx-amazon2-deploy:
+	$(MAKE) -C ./nginx-amazon2/ deploy
+
+nginx-amazon2-clean:
+	$(MAKE) -C ./nginx-amazon2/ clean
+
+nginx-amazon2-destroy:
+	$(MAKE) -C ./nginx-amazon2/ destroy
+
+# Python
 
 python-build:
 	$(MAKE) -C ./python/ build
@@ -147,6 +248,26 @@ python-clean:
 
 python-destroy:
 	$(MAKE) -C ./python/ destroy
+
+# Python-Gunicorn
+
+python-gunicorn-build:
+	$(MAKE) -C ./python-gunicorn/ build
+
+python-gunicorn-build-no-cache:
+	$(MAKE) -C ./python-gunicorn/ build-no-cache
+
+python-gunicorn-run: ## Python based on gunicorn/flask (must run `make pyhton-gunicorn-build` first.)
+	$(MAKE) -C ./python-gunicorn/ run	
+
+python-gunicorn-deploy:
+	$(MAKE) -C ./python-gunicorn/ deploy
+
+python-gunicorn-clean:
+	$(MAKE) -C ./python-gunicorn/ clean
+
+python-gunicorn-destroy:
+	$(MAKE) -C ./python-gunicorn/ destroy
 
 #NodeJS
 
@@ -168,7 +289,7 @@ nodejs-clean:
 nodejs-destroy:
 	$(MAKE) -C ./nodejs/ destroy
 
-#Java
+# Java
 
 java-build:
 	$(MAKE) -C ./java/ build
@@ -188,7 +309,7 @@ java-clean:
 java-destroy:
 	$(MAKE) -C ./java/ destroy
 
-#Dropwizard
+# Dropwizard
 
 dropwizard-build:
 	$(MAKE) -C ./dropwizard/ build
@@ -208,7 +329,7 @@ dropwizard-clean:
 dropwizard-destroy:
 	$(MAKE) -C ./dropwizard/ destroy
 
-#PHP
+# PHP
 
 php-build:
 	$(MAKE) -C ./php/ build
@@ -229,7 +350,7 @@ php-destroy:
 	$(MAKE) -C ./php/ destroy
 
 
-#Reverse Proxy
+# Reverse Proxy
 
 reverse-proxy-build:
 	$(MAKE) -C ./reverse-proxy/ build
@@ -249,7 +370,7 @@ reverse-proxy-clean:
 reverse-proxy-destroy:
 	$(MAKE) -C ./reverse-proxy/ destroy
 
-#golang
+# golang
 
 go-build:
 	$(MAKE) -C ./go/ build
@@ -269,7 +390,7 @@ go-clean:
 go-destroy:
 	$(MAKE) -C ./go/ destroy
 
-#HAProxy
+# HAProxy
 
 haproxy-build:
 	$(MAKE) -C ./haproxy/ build
@@ -289,7 +410,27 @@ haproxy-clean:
 haproxy-destroy:
 	$(MAKE) -C ./haproxy/ destroy
 
-#loadtest
+# HAProxy-Alpine
+
+haproxy-alpine-build:
+	$(MAKE) -C ./haproxy-alpine/ build
+
+haproxy-alpine-build-no-cache:
+	$(MAKE) -C ./haproxy-alpine/ build-no-cache
+
+haproxy-alpine-run:		## HAProxy based on Ubuntu 17.10 + LUA 5.3 + HAProxy 7+ (must run `make haproxy-build` first.)
+	$(MAKE) -C ./haproxy-alpine/ run	
+
+haproxy-alpine-deploy:
+	$(MAKE) -C ./haproxy-alpine/ deploy
+
+haproxy-alpine-clean:
+	$(MAKE) -C ./haproxy-alpine/ clean
+	
+haproxy-alpine-destroy:
+	$(MAKE) -C ./haproxy-alpine/ destroy
+
+# loadtest
 loadtest-build:
 	$(MAKE) -C ./loadtest/ build
 
@@ -308,7 +449,7 @@ loadtest-clean:
 loadtest-destroy:
 	$(MAKE) -C ./loadtest/ destroy
 
-#Apache CentOS 7
+# Apache CentOS 7
 
 apache-centos7-build:
 	$(MAKE) -C ./apache-centos7/ build
@@ -328,7 +469,7 @@ apache-centos7-clean:
 apache-centos7-destroy:
 	$(MAKE) -C ./apache-centos7/ destroy
 
-#Tomcat
+# Tomcat
 
 tomcat-build:
 	$(MAKE) -C ./tomcat/ build
